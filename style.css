@@ -94,7 +94,7 @@ hr {
   font-size: 10px;
   text-align: center;
   margin-bottom: 5px;
-  margin-top: 2px;
+  margin-top: 5px;
   opacity: 0;                        
   transform: translateY(3px);       
   transition: opacity 2s ease-out, transform 2s ease-out;
@@ -157,19 +157,19 @@ hr {
   position: absolute; 
   top: 0; 
   left: 50%; 
-  transform: translate(100%, -50px); /* start agak ke bawah */
+  transform: translate(-50%, -300px); 
   opacity: 0;                       
-  animation: fadeInUp 3s forwards;  /* animasi gabungan */
+  animation: fadeInUp 3s forwards;  
 }
 
 @keyframes fadeInUp {
   from { 
     opacity: 0; 
-    transform: translate(100%, -50px); /* bawah */
+    transform: translate(-50%, -500px);
   }
   to { 
     opacity: 1; 
-    transform: translate(-50%, 0);   /* posisi normal */
+    transform: translate(-50%, 0);   
   }
 }
 .helllogo {
@@ -205,19 +205,19 @@ hr {
   position: absolute; 
   top: 0; 
   left: 50%; 
-  transform: translate( 50%, -500px); /* start agak ke bawah */
+  transform: translate( =50%, -300px); 
   opacity: 0;                       
-  animation: fadeInUp 3.8s forwards;  /* animasi gabungan */
+  animation: fadeInUp 3.8s forwards;  
 }
 
 @keyframes fadeInUp {
   from { 
     opacity: 0; 
-    transform: translate(-50%, -500px); /* bawah */
+    transform: translate(-50%, -500px);
   }
   to { 
     opacity: 1; 
-    transform: translate(-50%, 0);   /* posisi normal */
+    transform: translate(-50%, 0);
   }
 }
 
@@ -243,30 +243,118 @@ hr {
   background: transparent;
   transition: all 1s ease;
   opacity: 0;
-  transform: translateY(-20px);  /* mulai dari atas */
+  transform: translateY(-20px);
   animation: fadeDown 4s forwards;
 }
-
 .btn span {
   margin-left: 15px;
   font-size: 9px;
 }
-
 .btn:hover {
   background: white;
   color: black;
 }
-
 @keyframes fadeDown {
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
-
-/* Delay per tombol (biar muncul 1-1) */
 .menu .btn:nth-child(1) { animation-delay: 4.2s; }
 .menu .btn:nth-child(2) { animation-delay: 4.4s; }
 .menu .btn:nth-child(3) { animation-delay: 4.6s; }
 .menu .btn:nth-child(4) { animation-delay: 4.8s; }
 .menu .btn:nth-child(5) { animation-delay: 5s; }
+
+.divider05 {
+  border: 0;
+  position: relative;
+  height: 1px;
+  margin: 20px auto;
+}
+
+.divider05::before { 
+  content: '';
+  background: white;
+  display: block;
+  width: 50%;
+  height: 1px;
+  position: absolute; 
+  top: 0; 
+  left: 50%; 
+  transform: translate(-50%, -200px); 
+  opacity: 0;                       
+  animation: fadeInUp 8.7s forwards;
+}
+
+@keyframes fadeInUp {
+  from { 
+    opacity: 0; 
+    transform: translate(-50%, -500px);
+  }
+  to { 
+    opacity: 1; 
+    transform: translate(-50%, 0);   
+  }
+}
+.about {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 200px;
+	padding: 5px 10px;
+	margin: 0 auto;
+	margin-top: -10px;
+	margin-bottom: -40px;
+	transform: translateX(-150px) translateY(20px);
+	opacity: 1;
+	transition: all 1s ease;
+}
+.about.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.about-section {
+  max-width: 600px;    
+  margin: 60px auto;   
+  transform: translateX(55px);
+  text-align: left;    
+  padding: 0 30px;       
+  opacity: 1;
+  transform: translateX( 55px) translateY(20px);
+  transition: all 1s ease;
+}
+
+.about-section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.about-text {
+  color: white;
+  font-family: Helvetica;
+  font-size: 8px;       /* kecil seperti di gambar */
+  line-height: 1;      /* jarak antar baris */
+  margin-bottom: 20px;
+  opacity: 1;
+  transform: translateY(20px);
+  transition: all 1s ease;
+}
+
+.about-text.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Delay biar muncul satu-satu */
+.about-text:nth-child(1) {
+  transition-delay: 0.2s;
+}
+.about-text:nth-child(2) {
+  transition-delay: 0.4s;
+}
+.about-text:nth-child(3) {
+  transition-delay: 0.6s;
+}
+.about-text:nth-child(4) {
+  transition-delay: 0.8s;
+}
